@@ -373,3 +373,102 @@ h3 {
     right: 1.5rem;
   }
 }
+
+/* Subpage Styles */
+.page-header {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  background-image: url('images/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.page-header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+.page-header-content {
+  position: absolute;
+  bottom: 4rem;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 1;
+}
+
+.page-header-content h1 {
+  font-size: 4rem;
+  color: var(--color-text);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.bio-section {
+  padding: 6rem 2rem;
+  background-color: var(--color-bg);
+  display: flex;
+  justify-content: center;
+}
+
+.bio-container {
+  max-width: 1200px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.bio-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  filter: grayscale(20%);
+  transition: filter 0.3s ease;
+}
+
+.bio-image img:hover {
+  filter: grayscale(0%);
+}
+
+.bio-text {
+  color: #d0d0d0;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.bio-text h2 {
+  font-size: 2.5rem;
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
+}
+
+.bio-text p {
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .bio-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .bio-image {
+    order: -1;
+    /* Image on top on mobile */
+  }
+
+  .page-header-content h1 {
+    font-size: 3rem;
+  }
+}
