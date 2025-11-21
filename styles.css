@@ -472,3 +472,6 @@ h3 {
     font-size: 3rem;
   }
 }
+.about-header {
+  background-image: url('images/aboutBG.jpg');
+}
