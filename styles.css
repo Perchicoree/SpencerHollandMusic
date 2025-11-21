@@ -472,6 +472,20 @@ h3 {
     font-size: 3rem;
   }
 }
-.about-header {
+
+/* About Page Specifics */
+.about-page {
   background-image: url('images/aboutBG.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.about-page .about-header {
+  background-image: none;
+}
+
+.about-page .bio-section {
+  background-color: rgba(10, 10, 10, 0.7);
+  backdrop-filter: blur(10px);
 }
