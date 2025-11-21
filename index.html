@@ -59,12 +59,28 @@
 
     <section id="music" class="content-section music-section">
       <h2>Music</h2>
-      <div class="spotify-embed-container">
-        <iframe style="border-radius:12px"
-          src="https://open.spotify.com/embed/artist/4dUAs3uoXz2swQ2DcMLIQ1?si=I75QtrpgQWiRDPLcGrvKxQ&theme=0"
-          width="100%" height="352" frameBorder="0" allowfullscreen=""
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <div class="music-grid">
+        <div class="embed-container spotify">
+          <iframe style="border-radius:12px"
+            src="https://open.spotify.com/embed/artist/4dUAs3uoXz2swQ2DcMLIQ1?si=I75QtrpgQWiRDPLcGrvKxQ&theme=0"
+            width="100%" height="352" frameBorder="0" allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+        <div class="embed-container apple">
+          <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="450"
+            style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;"
+            sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
+            src="https://embed.music.apple.com/us/album/agony-hills/1785039864"></iframe>
+        </div>
       </div>
+
+      <a href="music.html" class="hero-cta music-more-btn">
+        <span>More</span>
+        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14M12 5l7 7-7 7" />
+        </svg>
+      </a>
     </section>
 
     <section id="about-preview" class="about-section">
