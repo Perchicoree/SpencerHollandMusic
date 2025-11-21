@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spencer Holland</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <main>
+    <section id="hero" class="hero-section">
+      <header class="main-header">
+        <nav class="nav-container">
+          <div class="nav-group left">
+            <a href="#music" class="nav-link">Music</a>
+            <a href="shows.html" class="nav-link">Shows</a>
+          </div>
+
+          <div class="nav-logo">
+            <a href="#" class="logo-text">SH</a>
+          </div>
+
+          <div class="nav-group right">
+            <a href="merch.html" class="nav-link">Merch</a>
+            <a href="about.html" class="nav-link">About</a>
+          </div>
+        </nav>
+      </header>
+
+      <div class="hero-overlay"></div>
+
+      <div class="hero-layout">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            <span class="line">Spencer</span>
+            <span class="line">Holland</span>
+          </h1>
+          <a href="#music" class="hero-cta">
+            <svg class="play-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="1" />
+              <path d="M10 8L16 12L10 16V8Z" fill="currentColor" />
+            </svg>
+            <span>Listen Here</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="music" class="content-section music-section">
+      <h2>Music</h2>
+      <div class="spotify-embed-container">
+        <iframe style="border-radius:12px"
+          src="https://open.spotify.com/embed/artist/4dUAs3uoXz2swQ2DcMLIQ1?si=I75QtrpgQWiRDPLcGrvKxQ&theme=0"
+          width="100%" height="352" frameBorder="0" allowfullscreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </div>
+    </section>
+
+    <section id="about-preview" class="about-section">
+      <div class="about-overlay"></div>
+      <div class="about-content">
+        <h2>About</h2>
+        <p class="about-text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur.
+        </p>
+        <a href="about.html" class="hero-cta">
+          <span>Read More</span>
+          <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <button id="backToTop" class="back-to-top" aria-label="Back to Top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <path d="M18 15l-6-6-6 6" />
+    </svg>
+  </button>
+
+  <footer class="main-footer">
+    <p>&copy; 2024 Spencer Holland. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const backToTopBtn = document.getElementById('backToTop');
+    const heroSection = document.getElementById('hero');
+
+    window.addEventListener('scroll', () => {
+      // Show button when we scroll past the hero section
+      if (window.scrollY > heroSection.offsetHeight - 100) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+
+</body>
+
+</html>
