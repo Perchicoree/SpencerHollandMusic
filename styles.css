@@ -371,6 +371,46 @@ h3 {
   background-color: #000;
 }
 
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.social-icon,
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover,
+.social-link:hover {
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+.social-icon svg,
+.social-link svg {
+  width: 24px;
+  height: 24px;
+}
+
+.email-link {
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.email-link span {
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .nav-container {
@@ -578,4 +618,90 @@ h3 {
   -webkit-backdrop-filter: blur(10px);
   mask-image: linear-gradient(to bottom, transparent 0%, black 100px);
   -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 100px);
+}
+
+.music-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 2rem;
+  margin-top: 2rem;
+  z-index: 2;
+  position: relative;
+}
+
+.music-links .hero-cta {
+  margin-top: 0;
+  min-width: 180px;
+  justify-content: center;
+}
+
+.music-availability-text {
+  text-align: center;
+  font-size: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  padding: 0 2rem;
+  color: var(--color-text);
+  line-height: 1.4;
+  font-weight: 300;
+}
+
+/* Music Page Specifics */
+.music-page {
+  overflow: hidden;
+  height: 100vh;
+}
+
+.music-page .main-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.music-header-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(10, 10, 10, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  max-width: 900px;
+  width: 90%;
+  /* Ensure it's centered relative to the fixed container mechanics */
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  bottom: auto !important;
+  top: 15% !important;
+  margin-top: 0;
+  /* Adjust for nav visual balance */
+}
+
+/* Override the fade out for music page if script still adds it */
+.music-header-content.fade-out {
+  opacity: 1 !important;
+  transform: translateX(-50%) !important;
+}
+
+.music-header-content h1 {
+  margin-bottom: 1.5rem;
+}
+
+.music-header-content .music-availability-text {
+  margin-bottom: 2rem;
+  max-width: 100%;
+  padding: 0;
+}
+
+.music-header-content .music-links {
+  margin-top: 0;
+  padding: 0;
+  width: auto;
 }
