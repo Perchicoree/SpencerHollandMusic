@@ -103,7 +103,7 @@ h3 {
 /* Hero Section */
 .hero-section {
   position: relative;
-  min-height: 100vh;
+  min-height: 100dvh;
   width: 100%;
   display: block;
   background-image: url('images/hero.jpg');
@@ -143,7 +143,8 @@ h3 {
 }
 
 .hero-title {
-  font-size: clamp(3rem, 6vw, 6rem);
+  font-size: clamp(2.5rem, 8vw, 6rem);
+  /* Smaller minimum size for mobile */
   line-height: 1.1;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -412,29 +413,77 @@ h3 {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+  :root {
+    font-size: 14px;
+    /* Slightly smaller base font for mobile */
+  }
+
+  /* Navigation Mobile Overhaul */
+  .main-header {
+    height: auto;
+    padding: 0.5rem 0;
+  }
+
   .nav-container {
     display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1.5rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    width: 100%;
   }
 
   .nav-group {
-    gap: 1.5rem;
-    font-size: 0.9rem;
+    display: flex;
+    flex-direction: row;
+    gap: 0.8em;
+    /* Relative to font-size */
+    font-size: 0.8rem;
+    /* Shrink text */
+    width: auto;
   }
 
-  /* .hero-section { } */
+  .main-footer {
+    padding: 2rem 1rem;
+    /* Reduced padding for mobile */
+  }
 
+  .nav-group.left {
+    justify-content: flex-start;
+    order: unset;
+  }
+
+  .nav-group.right {
+    justify-content: flex-end;
+    order: unset;
+  }
+
+  .nav-logo {
+    order: unset;
+    margin-bottom: 0;
+  }
+
+  .logo-text {
+    font-size: 1.8rem;
+  }
+
+  /* Hero Adjustments for Mobile */
   .hero-layout {
     justify-content: center;
     align-items: center;
     padding-right: 0;
     padding-top: 0;
     text-align: center;
+    height: 100dvh;
+    /* Dynamic viewport height */
   }
+}
 
+@media (max-width: 768px) {
+
+  /* Further tweaks if needed */
   .about-section {
     justify-content: center;
     padding-left: 2rem;
@@ -704,4 +753,113 @@ h3 {
   margin-top: 0;
   padding: 0;
   width: auto;
+}
+
+/* Merch Page Specifics (Desktop) */
+.merch-page {
+  overflow: hidden;
+  height: 100vh;
+}
+
+.merch-page .main-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.merch-page .page-header {
+  height: 100vh;
+}
+
+.merch-page .content-section {
+  display: none !important;
+}
+
+.merch-page .page-header-content {
+  top: 40%;
+  transform: translateY(-50%);
+  bottom: auto;
+}
+
+.merch-page .coming-soon-text {
+  font-size: 1.5rem;
+  letter-spacing: 0.1em;
+  margin-top: 1rem;
+  color: var(--color-text-muted);
+}
+
+/* Mobile Overrides for Music & Merch */
+@media (max-width: 900px) {
+
+  .music-page,
+  .merch-page {
+    overflow-y: auto !important;
+    /* Force scroll */
+    height: auto !important;
+    /* Allow growing */
+    min-height: 100dvh;
+  }
+
+  .music-page .main-footer,
+  .merch-page .main-footer {
+    position: relative !important;
+    bottom: auto !important;
+  }
+
+  /* Reset fixed positioning for header content on mobile */
+  .music-header-content,
+  .merch-page .page-header-content {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    margin: 15vh auto 5rem !important;
+    /* Top spacing + bottom spacing */
+    width: 90% !important;
+    max-width: 500px;
+  }
+
+  .music-header-content {
+    margin-top: 20vh !important;
+    /* Adjust visual center for scrollable view */
+  }
+
+  .merch-page .page-header {
+    height: auto !important;
+    min-height: 100dvh;
+    /* Background covers at least full screen */
+    position: fixed;
+    /* Fixed background */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+  }
+
+  /* Ensure content sits on top */
+  .music-page main,
+  .merch-page main {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .music-availability-text {
+    font-size: 1.1rem;
+  }
+
+  .music-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .music-links .hero-cta {
+    width: 100%;
+    /* Full width buttons */
+    justify-content: center;
+  }
 }
